@@ -10,8 +10,8 @@ newBranch(){
   git branch
   git stash pop
   git add .
-  git commit -m "Creación de rama $1"
-  git push --set-upstream origin "feature$1"
+  git commit -m "Creación de rama feature-CMM-$1-$2"
+  git push --set-upstream origin "feature-CMM-$1-$2"
   exit 0
 }
 function push {
