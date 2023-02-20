@@ -1,5 +1,4 @@
-Green='\033[0;32m'
-NC='\033[0m' # No Color
+
 newBranch(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
@@ -16,15 +15,14 @@ newBranch(){
   exit 0
 }
 function push {
-    echo $1
+    printf "func2=%s,book2=%s\n" "$1" 
     git add .
-    git commit -m "[${message}]"
+    git commit -m "[$1 $2]"
     # git push
-    echo -e "COMMIT MESSAGE: ${1}"
 }
 init(){
-    
-    
+    Green='\033[0;32m'
+    NC='\033[0m' # No Color
     echo -e "I ${Green}love${NC} Stack Overflow"
 
     echo "Seleccione una opcion de git"
