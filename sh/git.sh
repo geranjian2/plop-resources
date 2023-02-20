@@ -1,4 +1,6 @@
 salir=3
+Green='\033[0;32m'
+NC='\033[0m' # No Color
 newBranch(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
@@ -19,11 +21,10 @@ function push {
     git add .
     git commit -m "${message}"
     git push
-    echo "MESSAGE COMMIT: ${message}"
+    echo "${Green}MESSAGE COMMIT:${NC} ${message}"
 }
 init(){
-    Green='\033[0;32m'
-    NC='\033[0m' # No Color
+    
 
     echo "Seleccione una opcion de git"
     echo -e " 1-${Green}New feature${NC} \n 2-${Green}Push changes${NC},\n ${salir}-${Green}Salir${NC}"
