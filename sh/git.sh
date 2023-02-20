@@ -16,8 +16,8 @@ newBranch(){
   exit 0
 }
 function push {
-    message = "$1 $2"
-    echo $message
+    
+    echo $1
     git add .
     git commit -m "[${message}]"
     # git push
