@@ -7,6 +7,8 @@ newBranch(){
 #   git fetch
 #   git checkout main
 #   git pull
+  git add .
+  git commit -m "Creación de rama $1"
   git checkout -b "feature/$1"
   git branch
   git stash pop
