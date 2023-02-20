@@ -24,10 +24,9 @@ function push {
 init(){
     Green='\033[0;32m'
     NC='\033[0m' # No Color
-    echo -e "I ${Green}love${NC} Stack Overflow"
 
     echo "Seleccione una opcion de git"
-    echo -e " 1-${Green}feature${NC} \n 2-${Green}push${NC},\n 3-${Green}merge${NC},\n 5-${Green}Salir${NC}"
+    echo -e " 1-${Green}New feature${NC} \n 2-${Green}Push changes${NC},\n 3-${Green}Salir${NC}"
     read x
 
     while [ $x != 5 ]
@@ -38,7 +37,7 @@ init(){
             read y
             echo "[nombre-funcionalidad]"
             read z
-            newBranch $y $z
+            newBranch "$y" "$z"
             exit
         ;;
         2)
@@ -61,6 +60,9 @@ init(){
                     echo "entro3"
                     commit=$REMOVE
                 ;;
+                4)
+                 exit 0
+                ;;
                 esac
             echo " ingrese su Commit message"
             read z
@@ -68,11 +70,7 @@ init(){
             exit
         ;;
         3)
-            standard
-            exit
-        ;;
-        4)
-            exit
+            exit 0
         ;;
         esac
     done
