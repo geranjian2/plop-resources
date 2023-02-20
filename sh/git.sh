@@ -51,15 +51,15 @@ init(){
             case $y in
                 1)
                     echo "entro1"
-                    $commit = $ADD
+                    $commit="${ADD}"
                 ;;
                 2)
                     echo "entro2"
-                    $commit = $REFACTOR
+                    $commit="$ADD"
                 ;;
                 3)
                     echo "entro3"
-                    $commit = $REMOVE
+                    $commit="$ADD"
                 ;;
                 esac
             echo " ingrese su Commit message"
