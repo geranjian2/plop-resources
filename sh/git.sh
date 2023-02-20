@@ -21,7 +21,7 @@ function push {
     git add .
     git commit -m "${message}"
     git push
-    echo "${Green}MESSAGE COMMIT:${NC} ${message}"
+    echo -e "${Green}MESSAGE COMMIT:${NC} ${message}"
 }
 init(){
     
