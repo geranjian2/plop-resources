@@ -1,4 +1,4 @@
-
+salir=3
 newBranch(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
@@ -26,7 +26,7 @@ init(){
     NC='\033[0m' # No Color
 
     echo "Seleccione una opcion de git"
-    echo -e " 1-${Green}New feature${NC} \n 2-${Green}Push changes${NC},\n 3-${Green}Salir${NC}"
+    echo -e " 1-${Green}New feature${NC} \n 2-${Green}Push changes${NC},\n ${salir}-${Green}Salir${NC}"
     read x
 
     while [ $x != 5 ]
@@ -41,11 +41,12 @@ init(){
             exit
         ;;
         2)
+            exitpu=3
             echo "Commit message"
             ADD='ADD'
             REFACTOR='REFACTOR'
             REMOVE='REMOVE'
-            echo -e " 1-${Green}${ADD}${NC} \n 2-${Green}${REFACTOR}${NC},\n 3-${Green}${REMOVE}${NC},\n 4-${Green}Salir${NC}"
+            echo -e " 1-${Green}${ADD}${NC} \n 2-${Green}${REFACTOR}${NC},\n ${exitpu}-${Green}Salir${NC}"
             read y
             case $y in
                 1)
@@ -60,7 +61,7 @@ init(){
                     echo "entro3"
                     commit=$REMOVE
                 ;;
-                4)
+                $exitpu)
                  exit 0
                 ;;
                 esac
@@ -69,7 +70,7 @@ init(){
             push $commit "$z"
             exit
         ;;
-        3)
+        $salir)
             exit 0
         ;;
         esac
