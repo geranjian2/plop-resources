@@ -1,4 +1,5 @@
-
+Green='\033[0;32m'
+NC='\033[0m' # No Color
 newBranch(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
@@ -15,14 +16,15 @@ newBranch(){
   exit 0
 }
 function push {
-    printf "func2=%s,book2=%s\n" "$1" 
+    message=  "${1} ${2}"
     git add .
-    git commit -m "[$1 $2]"
+    git commit -m "[$message]"
     # git push
+    echo -e "COMMIT MESSAGE: ${Green}$message${NC}"
 }
 init(){
-    Green='\033[0;32m'
-    NC='\033[0m' # No Color
+    
+    
     echo -e "I ${Green}love${NC} Stack Overflow"
 
     echo "Seleccione una opcion de git"
@@ -41,9 +43,9 @@ init(){
         ;;
         2)
             echo "Commit message"
-            ADD='Add'
-            REFACTOR='Refactor'
-            REMOVE='Remove'
+            ADD='ADD'
+            REFACTOR='REFACTPR'
+            REMOVE='REMOVE'
             commit=''
             echo -e " 1-${Green}${ADD}${NC} \n 2-${Green}${REFACTOR}${NC},\n 3-${Green}${REMOVE}${NC},\n 4-${Green}Salir${NC}"
             read $1
