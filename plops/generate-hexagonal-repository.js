@@ -5,27 +5,27 @@ let params = [
   {
     path: "domain/models",
     file: "{{dashCase name}}-model.ts",
-    template:`${routesTemplates}/model.js.hbs`
+    template:`${routesTemplates}/domain/models/model.hbs`
   },
   {
     path: "domain/repository",
     file: "{{dashCase name}}-repository.ts",
-    template:`${routesTemplates}/repository.js.hbs`
+    template:`${routesTemplates}/domain/repository/repository.hbs`
   },
   {
     path: "application/use-cases/{{dashCase name}}",
     file: "create-{{dashCase name}}-usecase.ts",
-    template:`${routesTemplates}/useCase.js.hbs`,
+    template:`${routesTemplates}/application/use-cases/use-case.hbs`,
   },
   {
     path: "infrastructure/implementations/typeorm/{{dashCase name}}",
     file: "{{dashCase name}}-repository-typeorm.ts",
-    template:`${routesTemplates}/implementationdb.js.hbs`,
+    template:`${routesTemplates}/infrastructure/implementations/typeorm/type-orm-repository.hbs`,
   },
   {
     path: "infrastructure/implementations/typeorm/",
     file: "{{dashCase nameSuffix}}.module.ts",
-    template:`${routesTemplates}/typeormimplementationmodule.js.hbs`,
+    template:`${routesTemplates}/infrastructure/implementations/typeorm/type-orm-repository-module.hbs`,
     data:{
       nameSuffix:'TypeOrmRepository'
     }
@@ -33,7 +33,7 @@ let params = [
   {
     path: "infrastructure/driving-adapters/http/typeorm/",
     file: "{{dashCase nameSuffix}}.module.ts",
-    template:`${routesTemplates}/httpDrivinAdapterModule.js.hbs`,
+    template:`${routesTemplates}/infrastructure/driving-adapters/http/typeorm/http-type-orm-module.hbs`,
     data:{
       nameSuffix:'HttpTypeOrm'
     }
@@ -41,7 +41,7 @@ let params = [
   {
     path: "infrastructure/driving-adapters/http/typeorm/",
     file: "{{dashCase name}}.controller.ts",
-    template:`${routesTemplates}/controllerService.js.hbs`,
+    template:`${routesTemplates}/infrastructure/driving-adapters/http/controller-service.hbs`,
     data:{
       nameSuffix:'HttpTypeOrm'
     }

@@ -14,13 +14,19 @@ newBranch(){
   git push --set-upstream origin "feature$1"
   exit 0
 }
+function push {
+    printf "func2=%s,book2=%s\n" "$1" 
+    git add .
+    git commit -m "[$1 $2]"
+    # git push
+}
 init(){
     Green='\033[0;32m'
     NC='\033[0m' # No Color
     echo -e "I ${Green}love${NC} Stack Overflow"
 
     echo "Seleccione una opcion de git"
-    echo -e " 1-${Green}feature${NC} \n 2-${Green}push${NC},\n 3-${Green}merge${NC},\n  5-${Green}Salir${NC}"
+    echo -e " 1-${Green}feature${NC} \n 2-${Green}push${NC},\n 3-${Green}merge${NC},\n 5-${Green}Salir${NC}"
     read x
 
     while [ $x != 5 ]
@@ -34,7 +40,27 @@ init(){
             exit
         ;;
         2)
-            cdt
+            echo "Commit message"
+            ADD='Add'
+            REFACTOR='Refactor'
+            REMOVE='Remove'
+            commit=''
+            echo -e " 1-${Green}${ADD}${NC} \n 2-${Green}${REFACTOR}${NC},\n 3-${Green}${REMOVE}${NC},\n 4-${Green}Salir${NC}"
+            read $1
+            case $1 in
+                1)
+                    $commit = $ADD
+                ;;
+                2)
+                    $commit = $REFACTOR
+                ;;
+                3)
+                    $commit = $REMOVE
+                ;;
+                esac
+            echo " ingrese su Commit message"
+            read $2
+            push $1 $2
             exit
         ;;
         3)
@@ -42,7 +68,6 @@ init(){
             exit
         ;;
         4)
-            apertura
             exit
         ;;
         esac

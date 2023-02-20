@@ -6,7 +6,7 @@ NC='\033[0m' # No Color
 echo -e "I ${Green}love${NC} Stack Overflow"
 
 echo "Seleccione el port forward"
-echo -e " 1-${Green}Seguro${NC} \n 2-${Green}Cdt${NC},\n 3-${Green}Standard${NC},\n 4-${Green}Apertura${NC},\n 5-${Green}Salir${NC}"
+echo -e " 1-${Green}Git${NC} \n 2-${Green}Cdt${NC},\n 3-${Green}Standard${NC},\n 4-${Green}Apertura${NC},\n 5-${Green}Salir${NC}"
 read x
 
 

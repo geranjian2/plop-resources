@@ -1,5 +1,6 @@
 
-export interface BaseRepository<T> {
+export * from './base-repository'
+export interface IBaseRepository<T> {
   save: (user: T) => Promise<T>
   getAll: () => Promise<T[]>
   getById: (userId: string) => Promise<T | undefined>
