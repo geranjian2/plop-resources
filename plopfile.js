@@ -2,7 +2,7 @@ const { hexagonal, generateHexagonalRepository } = require('./plops');
 module.exports = function (plop) {
   plop.setGenerator('Hexagonal', hexagonal);
   plop.setGenerator('Hexagonal Repository', generateHexagonalRepository);
-
+  plop.setGenerator('Generate useCase', generateHexagonalRepository);
   };
       // plop.setGenerator("Complete module", {
     //     description: "Create module complement service, controller, dto",

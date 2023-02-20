@@ -58,7 +58,8 @@ then
   echo borrando node_modules...
   rm -Rf node_modules
   rm package-lock.json
-  aws codeartifact login --tool npm --repository matrixtech-npm-repository --domain matrixtech-npm-repository
+  echo borrado exitoso...
+  echo instalando node_modules...
   npm i
 fi
 

@@ -73,12 +73,12 @@ module.exports = {
       message: "Choice Name monorepo 🛰",
       choices: [...MONO_REPOS],
     },
-    {
-      type: "list",
-      name: "caseuse",
-      message: "Choice case use create 🛰",
-      choices: [...USES_CASE],
-    },
+    // {
+    //   type: "list",
+    //   name: "caseuse",
+    //   message: "Choice case use create 🛰",
+    //   choices: [...USES_CASE],
+    // },
   ],
   actions: (data) => {
     let defaultPath = `apps/${data.monorepo}/src/`;
