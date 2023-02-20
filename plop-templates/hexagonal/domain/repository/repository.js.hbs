@@ -1,6 +1,6 @@
 import { type {{pascalCase name}}Model } from '../models'
 import { BaseRepository } from './base-repository'
 export * from './{{name}}-repository'
-export interface {{pascalCase name}}Repository extends BaseRepository<{{pascalCase name}}Model> {
+export interface I{{pascalCase name}}Repository extends IBaseRepository<{{pascalCase name}}Model> {
   base?:string
 }

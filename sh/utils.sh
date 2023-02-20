@@ -77,6 +77,14 @@ then
   git push --set-upstream origin "feature$2"
 fi
 
+# Sirve para generar una nueva rama para un nuevo desarrollo.
+if [ "$1" = "push" ]
+then
+  git add .
+  git commit -m "Adjust $2"
+  git push
+fi
+
 # Permite hacer la mezcla diaria que se debe hacer entre la rama propia y master
 if [ "$1" = "merge" ]
 then

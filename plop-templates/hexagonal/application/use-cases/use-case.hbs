@@ -2,12 +2,12 @@
 
 import { Inject, Injectable } from '@nestjs/common'
 import { {{pascalCase name}}Model } from 'apps/{{name}}/src/domain/entities'
-import { {{pascalCase name}}Repository } from 'apps/{{name}}/src/domain/repositories'
+import { I{{pascalCase name}}Repository } from 'apps/{{name}}/src/domain/repositories'
 
 @Injectable()
 export class Create{{pascalCase name}}UseCase {
   constructor(
-    @Inject('{{pascalCase name}}Repository') private userRepository: {{pascalCase name}}Repository,
+    @Inject('{{pascalCase name}}Repository') private userRepository: I{{pascalCase name}}Repository,
   ) {}
   async run():Promise<any> {
     
