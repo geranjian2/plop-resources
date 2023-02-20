@@ -15,7 +15,7 @@ newBranch(){
   exit 0
 }
 function push {
-    printf "func2=%s,book2=%s\n" "$1" 
+    echo $1
     git add .
     git commit -m "[$1 $2]"
     # git push
@@ -60,7 +60,7 @@ init(){
                 esac
             echo " ingrese su Commit message"
             read $2
-            push $1 $2
+            push $commit $2
             exit
         ;;
         3)
