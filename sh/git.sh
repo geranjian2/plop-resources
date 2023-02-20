@@ -18,9 +18,9 @@ newBranch(){
 function push {
     message = "$1 $2"
     git add .
-    git commit -m "[$message]"
+    git commit -m "[${message}]"
     # git push
-    echo -e "COMMIT MESSAGE: ${Green}$message${NC}"
+    echo -e "COMMIT MESSAGE: ${Green}${message}${NC}"
 }
 init(){
     
