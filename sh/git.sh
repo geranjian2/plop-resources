@@ -48,14 +48,17 @@ init(){
             commit=''
             echo -e " 1-${Green}${ADD}${NC} \n 2-${Green}${REFACTOR}${NC},\n 3-${Green}${REMOVE}${NC},\n 4-${Green}Salir${NC}"
             read y
-            case $1 in
+            case $y in
                 1)
+                    echo "entro1"
                     $commit = $ADD
                 ;;
                 2)
+                    echo "entro2"
                     $commit = $REFACTOR
                 ;;
                 3)
+                    echo "entro3"
                     $commit = $REMOVE
                 ;;
                 esac
