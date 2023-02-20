@@ -6,12 +6,12 @@ newBranch(){
   git fetch
   git checkout main
   git pull
-  git checkout -b "feature/$1"
+  git checkout -b "feature-CMM-$1-$2"
   git branch
   git stash pop
   git add .
   git commit -m "Creación de rama $1"
-  git push --set-upstream origin "feature/$1"
+  git push --set-upstream origin "feature$1"
   exit 0
 }
 function push {
@@ -34,10 +34,11 @@ init(){
     do
     case $x in
         1)
-            
-            echo "New feature"
-            read $1
-            newBranch
+            echo "[nº de historia o tarea]"
+            read y
+            echo "[nombre-funcionalidad]"
+            read z
+            newBranch y z
             exit
         ;;
         2)
