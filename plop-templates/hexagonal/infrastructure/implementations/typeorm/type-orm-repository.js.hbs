@@ -1,0 +1,21 @@
+import { Injectable } from '@nestjs/common'
+import { InjectRepository } from '@nestjs/typeorm'
+import { {{pascalCase name}}Model } from 'apps/{{name}}/src/domain/entities'
+import { {{pascalCase name}}Repository } from 'apps/{{name}}/src/domain/repositories'
+import { {{pascalCase name}}Entity } from 'libs/entities/entity'
+import { Repository } from 'typeorm'
+
+@Injectable()
+export class {{pascalCase name}}RepositoryTypeOrm implements {{pascalCase name}}Repository {
+  constructor(
+    @InjectRepository({{pascalCase name}}Entity )
+    private readonly userRepository: Repository<{{pascalCase name}}Entity >,
+  ) {}
+  async save(user: {{pascalCase name}}Model ): Promise<{{pascalCase name}}Model > {
+    return user
+  }
+  getAll: () => Promise<{{pascalCase name}}Model[]>
+  getById: (userId: string) => Promise<{{pascalCase name}}Model>
+  delete: (user: {{pascalCase name}}Model ) => Promise<string>
+  update: (user: {{pascalCase name}}Model ) => Promise<{{pascalCase name}}Model >
+}

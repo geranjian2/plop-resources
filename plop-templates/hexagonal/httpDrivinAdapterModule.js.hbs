@@ -1,0 +1,16 @@
+import { Module } from '@nestjs/common'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { {{pascalCase name}}Controller } from './type-documents.controller'
+import { {{pascalCase name}}Entity } from 'libs/entities/entity'
+import { {{pascalCase name}}RepositoryTypeOrm } from 'apps/{{monorepo}}/src/infrastructure/implementations/typeorm/{{name}}/{{name}}-repository-typeorm
+import { Create{{pascalCase name}}UseCase } from 'apps/{{monorepo}}/src/application/uses-cases/{{name}}/create-{{name}}.usecase'
+
+@Module({
+  imports: [TypeOrmModule.forFeature([{{pascalCase name}}Entity])],
+  controllers: [{{pascalCase name}}Controller],
+  providers: [
+    Create{{pascalCase name}}UseCase,
+    { provide: '{{pascalCase name}}Repository', useClass: {{pascalCase name}}RepositoryTypeOrm },
+  ],
+})
+export class {{nameSuffix}}Module {}

@@ -1,0 +1,36 @@
+import { Controller, Get } from '@nestjs/common'
+import { Create{{pascalCase name}}UseCase } from 'apps/{{monorepo}}/src/application/uses-cases/{{name}}/create-{{name}}.usecase'
+
+
+@Controller({{name}})
+export class {{pascalCase name}}Controller {
+  constructor(
+    private readonly create{{pascalCase name}}UseCase: Create{{pascalCase name}}UseCase,
+  ) {}
+
+  @Post()
+  async create(@Body() createUserDto: CreateUserDto) {
+    //return this.create{{pascalCase name}}UseCase.create(createUserDto);
+  }
+
+  @Get()
+  async findAll() {
+    //return this.findAll{{pascalCase name}}UseCase.findAll();
+  }
+
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    //return this.findOne{{pascalCase name}}UseCase.findOne(+id);
+  }
+
+  @Patch(':id')
+  async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+    //return this.update{{pascalCase name}}UseCase.update(+id, updateUserDto);
+  }
+
+  @Delete(':id')
+  async remove(@Param('id') id: string) {
+    //return this.remove{{pascalCase name}}UseCase.remove(+id);
+  }
+
+}
