@@ -18,7 +18,7 @@ function push {
     message="[$1 $2]"
     git add .
     git commit -m "${message}"
-    # git push
+    git push
     echo "MESSAGE COMMIT: ${message}"
 }
 init(){
