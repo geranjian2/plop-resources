@@ -47,7 +47,7 @@ init(){
             REMOVE='REMOVE'
             commit=''
             echo -e " 1-${Green}${ADD}${NC} \n 2-${Green}${REFACTOR}${NC},\n 3-${Green}${REMOVE}${NC},\n 4-${Green}Salir${NC}"
-            read $1
+            read y
             case $1 in
                 1)
                     $commit = $ADD
@@ -60,8 +60,8 @@ init(){
                 ;;
                 esac
             echo " ingrese su Commit message"
-            read $2
-            push $1 $2
+            read z
+            push y z
             exit
         ;;
         3)
