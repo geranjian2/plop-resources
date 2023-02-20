@@ -38,7 +38,7 @@ init(){
             read y
             echo "[nombre-funcionalidad]"
             read z
-            newBranch y z
+            newBranch $y $z
             exit
         ;;
         2)
