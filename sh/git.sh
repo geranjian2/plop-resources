@@ -3,10 +3,10 @@ newBranch(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
   echo hola
-  git stash save "feature-nuevo"
-  git fetch
-  git checkout main
-  git pull
+#   git stash save "feature-nuevo"
+#   git fetch
+#   git checkout main
+#   git pull
   git checkout -b "feature/$1"
   git branch
   git stash pop
