@@ -3,12 +3,19 @@ newBranch(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
   echo hola
+<<<<<<< Updated upstream
 #   git stash save "feature-nuevo"
 #   git fetch
 #   git checkout main
 #   git pull
   git add .
   git commit -m "Creación de rama $1"
+=======
+  git stash save "feature-nuevosss"
+  git fetch
+  git checkout main
+  git pull
+>>>>>>> Stashed changes
   git checkout -b "feature/$1"
   git branch
   git stash pop
