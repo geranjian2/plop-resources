@@ -42,24 +42,23 @@ init(){
         ;;
         2)
             echo "Commit message"
-            ADD='ADDdsdsds'
+            ADD='ADD'
             REFACTOR='REFACTOR'
             REMOVE='REMOVE'
-            commit
             echo -e " 1-${Green}${ADD}${NC} \n 2-${Green}${REFACTOR}${NC},\n 3-${Green}${REMOVE}${NC},\n 4-${Green}Salir${NC}"
             read y
             case $y in
                 1)
                     echo "entro1"
-                    $commit='ADD'
+                    commit=$ADD
                 ;;
                 2)
                     echo "entro2"
-                    $commit='ADD"
+                    commit=$REFACTOR
                 ;;
                 3)
                     echo "entro3"
-                    $commit="$ADD"
+                    commit=$REMOVE
                 ;;
                 esac
             echo " ingrese su Commit message"
