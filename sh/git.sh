@@ -50,21 +50,19 @@ init(){
             read y
             case $y in
                 1)
-                    echo "entro1"
                     commit=$ADD
                 ;;
                 2)
-                    echo "entro2"
                     commit=$REFACTOR
                 ;;
                 3)
-                    echo "entro3"
                     commit=$REMOVE
                 ;;
                 $exitpu)
                  exit 0
                 ;;
                 esac
+            echo "opcion ${commit}"
             echo " ingrese su Commit message"
             read z
             push $commit "$z"
