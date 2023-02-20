@@ -61,7 +61,7 @@ init(){
                 esac
             echo " ingrese su Commit message"
             read z
-            push $y $z
+            push $commit $z
             exit
         ;;
         3)
