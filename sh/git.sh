@@ -2,8 +2,8 @@
 newBranch(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
-  git stash save "feature-nuevo"
-  git fetch
+#   git stash save "feature-nuevo"
+#   git fetch
   git checkout main
   git pull
   git checkout -b "feature/$1"
